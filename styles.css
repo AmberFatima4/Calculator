@@ -1,0 +1,159 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: #f0f0f0; /* Light background for contrast */
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+}
+
+.calculator {
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    overflow: hidden;
+    width: 100%;
+    max-width: 360px; /* Maximum width */
+    background: #222; /* Dark background for calculator */
+}
+
+.display {
+    background: #000;
+    color: #00ff00; /* Neon green for the display */
+    padding: 20px;
+    text-align: right;
+    border-bottom: 1px solid #444;
+}
+
+#display {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-size: 2.5em;
+    color: #00ff00;
+    text-align: right;
+    box-sizing: border-box;
+    padding: 0 10px;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 1px;
+}
+
+.btn {
+    background: #333;
+    border: 1px solid #444;
+    font-size: 1.6em;
+    padding: 20px;
+    text-align: center;
+    color: #fff;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+.btn:hover {
+    background: #444;
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn.operator {
+    background: #555;
+    color: #ff9800; /* Orange for operators */
+}
+
+.btn.operator:hover {
+    background: #666;
+}
+
+.btn.equal {
+    background: #ff9800; /* Orange for equal button */
+    color: #fff;
+    grid-column: span 4;
+}
+
+.btn.equal:hover {
+    background: #f57c00;
+}
+
+.btn.clear {
+    background: #f44336; /* Red for clear button */
+    color: #fff;
+}
+
+.btn.clear:hover {
+    background: #d32f2f;
+}
+
+.btn.zero {
+    grid-column: span 2;
+}
+
+.btn.decimal {
+    background: #555;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    #display {
+        font-size: 2em;
+        padding: 0 8px;
+    }
+
+    .btn {
+        font-size: 1.4em;
+        padding: 15px;
+    }
+
+    .btn.equal {
+        font-size: 1.4em;
+    }
+}
+
+@media (max-width: 480px) {
+    .calculator {
+        width: 90%;
+        max-width: none; /* Remove max-width constraint on very small screens */
+    }
+
+    #display {
+        font-size: 1.7em;
+        padding: 0 6px;
+    }
+
+    .btn {
+        font-size: 1.2em;
+        padding: 12px;
+    }
+
+    .btn.equal {
+        font-size: 1.3em;
+    }
+
+    .btn.zero {
+        grid-column: span 2;
+    }
+}
+
+@media (max-width: 320px) {
+    #display {
+        font-size: 1.5em;
+        padding: 0 4px;
+    }
+
+    .btn {
+        font-size: 1em;
+        padding: 10px;
+    }
+
+    .btn.equal {
+        font-size: 1.2em;
+    }
+}
+
+
+
