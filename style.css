@@ -1,0 +1,588 @@
+.calculator {
+    display: block;
+}
+
+#scientificCalculator {
+    display: none;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f8f9fa;
+}
+
+#calculators{
+    text-align: center;
+    background-color: black;
+}
+
+#inputField {
+    width: 100%;
+    height: 60px;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: right;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    background-color: gainsboro; 
+    color: black; 
+    box-shadow: inset 0px 0px 20px rgba(0, 0, 0, 0.75); 
+    padding: 15px;
+    border: none;
+}
+
+#inputField:focus {
+    outline: none; 
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5), 
+                0px 0px 20px rgba(0, 255, 0, 0.7); 
+}
+
+@media (max-width: 600px) {
+    #inputField {
+        padding: 10px; 
+        font-size: 20px; 
+        height: 50px; 
+        box-shadow: inset 0px 0px 15px rgba(0, 0, 0, 0.5);
+    }
+}
+
+.onButton {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, lightblue, blue, lightblue);
+    color: white;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753); 
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+}
+
+.onButton:hover {
+    background: linear-gradient(to bottom, lightblue,rgba(24, 10, 224, 0.589) , lightblue);
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753); 
+    color: white;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+
+
+
+.dig {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, lightgray, black, darkgray); 
+    color: white;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
+    font-size: 1.2em;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+}
+
+.dig:hover {
+    background: linear-gradient(to bottom, #b0b0b0, #808080, #b0b0b0);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 1px solid black; 
+}
+
+.opr {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, lightgray, rgb(165, 161, 161), lightgray);
+    color: black;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.5); 
+    font-weight: bold;
+    padding: 10px 15px;
+    margin: 5px;
+    border: none;
+}
+
+.opr:hover {
+    background: linear-gradient( rgba(61, 57, 57, 0.767)); 
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+    color: white;
+    border: 1px solid black;
+}
+
+    .offButton {
+        border-radius: 5px;
+        background: linear-gradient(to bottom, lightcoral, red, darkred);
+        color: white;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        border: none;
+        padding: 10px 15px;
+        margin: 5px;
+        font-weight: bold;    }
+    
+    .offButton:hover {
+        background: linear-gradient(to bottom,red, lightcoral darkred);
+        box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+        color: black;
+        border: 1px solid darkred;
+    }
+
+@media (min-width: 600px) {
+    .onButton, .dig, .opr, .offButton {
+        padding: 6px 15px;
+        margin: 6px;
+    }
+}
+
+@media (max-width: 601px) {
+    .onButton, .dig, .opr, .offButton {
+        padding: 5px 13px;
+        margin: 6px; 
+    }
+}
+
+@media (min-width: 600px) {
+    .opra{
+        padding: 6px 20px;
+        margin: 6px; 
+        font-size: large;
+    }
+}
+@media (max-width: 601px) {
+    .opra {
+        padding: 5px 17px;
+        margin: 6px; 
+    }
+}
+
+
+.calculator {
+    width: 100%;
+    max-width: 300px;
+    background-color: black; 
+    padding: 25px 20px 20px; 
+    border-radius: 15px; 
+    box-shadow: 
+        0px 10px 20px rgba(0, 0, 0, 0.8),
+        0px -10px 20px rgba(255, 255, 255, 0.1),
+        10px 0px 20px rgba(0, 0, 0, 0.6), 
+        -10px 0px 20px rgba(255, 255, 255, 0.1);
+    margin: 20px auto; 
+    color: white; 
+    text-align: center;
+}
+@media (max-width: 600px) {
+    .calculator {
+        max-width: 260px; 
+        padding: 32px 16px 16px; 
+        box-shadow: 
+            0px 8px 16px rgba(0, 0, 0, 0.7), 
+            0px -8px 16px rgba(255, 255, 255, 0.1), 
+            8px 0px 16px rgba(0, 0, 0, 0.5), 
+            -8px 0px 16px rgba(255, 255, 255, 0.1); 
+    }
+}
+
+@media (max-width: 767px) {
+    .heading {
+        font-size: 1.5rem; 
+    }
+
+    .description {
+        font-size: 1rem; 
+
+    }
+}
+
+.button-container {
+    gap: 10px; 
+    margin-top: 20px; 
+    flex-wrap: wrap; 
+}
+
+.simple-btn, .scientific-btn {
+    background: linear-gradient(to bottom, lightblue, blue, lightblue);
+    color: white;
+    border: 2px solid #004080; 
+    border-radius: 8px; 
+    font-size: 14px; 
+    font-weight: bold; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+.simple-btn:hover {
+    background: linear-gradient(to bottom, lightblue, rgba(24, 10, 224, 0.589), lightblue);
+    color: black;
+    border-color: #003366; 
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+
+.scientific-btn:hover {
+    background: linear-gradient(to bottom, #b0b0b0, #808080, #b0b0b0);
+    color: black;
+    border-color: #666;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); 
+}
+
+@media (min-width: 768px) {
+    .simple-btn, .scientific-btn {
+        padding: 9px 18px; 
+        font-size: 16px; 
+    }
+}
+
+@media (max-width: 767px) {
+    .simple-btn, .scientific-btn {
+        padding: 7px 16px; 
+        font-size: 14px;
+        border: 1px solid #004080; 
+    }
+}
+
+.scibtn {
+    background: linear-gradient(to bottom, white, rgb(161, 156, 156), rgb(102, 93, 93), rgba(90, 87, 87, 0.568));    border: 2px solid #000;
+    border-top-width: 1px;
+    border-bottom-width: 3px; 
+    color: white;
+    font-size: 10px; 
+    padding: 1px 10px; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.6); 
+    margin: 3px 5px; 
+    width: calc(20% - 8px);
+    border-radius: 10px 10px 15px 15px; 
+     align-items: center;
+     font-weight: bold;
+    
+}
+
+.scibtn:hover {
+    background: linear-gradient(to bottom, #3f3e3ec7, #d3d3d3); 
+    color: black; 
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 600px) {
+    .scibtn {
+        font-size: 9px; 
+        padding: 1px 7px;
+        width: calc(50% - 8px);
+        margin: 2px 4px;
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .scibtn {
+        font-size: 9px; 
+        padding: 1px 8px; 
+        width: calc(33.33% - 8px); 
+    }
+}
+
+.digbtn {
+    background: linear-gradient(to bottom, lightgray, black, darkgray); 
+    border: 2px solid #000; 
+    border-top-width: 2px; 
+    border-bottom-width: 4px;
+    color: white; 
+    font-size: 14px; 
+    padding: 4px 14px;
+    box-shadow: 0px 7px 12px rgba(0, 0, 0, 0.7); 
+    margin: 3px 5px; 
+    width: calc(25% - 10px);
+    border-radius: 12px 12px 18px 18px; 
+    align-items: center;
+    font-weight: bold;
+}
+
+.digbtn:hover {
+    background: linear-gradient(to bottom, #ffffff, #706d6dd0, lightgray);
+    color: black; 
+    box-shadow: 0px 9px 18px rgba(0, 0, 0, 0.9); 
+}
+
+@media (max-width: 600px) {
+    .digbtn {
+        font-size: 12px; 
+        padding: 3px 10px; 
+        width: calc(50% - 10px);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .digbtn {
+        font-size: 13px; 
+        padding: 3px 12px;
+        width: calc(33.33% - 10px); 
+    } 
+}
+
+
+.oprbtn {
+    background: linear-gradient(to bottom, #e0e0e0, #c0c0c0, #a0a0a0); 
+    border: 2px solid #888; 
+    border-top-width: 2px; 
+    border-bottom-width: 4px; 
+    color: #222; 
+    font-size: 20px; 
+    padding: 5px 14px; 
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.4); 
+    margin: 3px 4px; 
+    width: calc(25% - 10px);
+    border-radius: 10px; 
+    font-weight: bold; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.oprbtn:hover {
+    background: linear-gradient(to bottom, #d0d0d0, #b0b0b0, #909090); 
+    color: #000; 
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.6); 
+}
+
+@media (max-width: 600px) {
+    .oprbtn {
+        font-size: 12px; 
+        padding: 4px 10px; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .oprbtn {
+        font-size: 13px; 
+        padding: 5px 12px; 
+    }
+}
+
+.onBtn {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, lightblue, blue, lightblue);
+    color: white;
+    font-weight: bold;
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753);
+    padding: 9px 15px;
+    margin: 5px;
+    border: none;}
+
+.onBtn:hover {
+    background: linear-gradient(to bottom, lightblue, rgba(24, 10, 224, 0.589), lightblue);
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753);
+    color: white;
+    border: 1px solid white;
+}
+
+@media (max-width: 600px) {
+    .onBtn {
+        padding: 7px 10px; 
+       
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .onBtn {
+        padding: 8px 12px; 
+    }
+}
+
+.offBtn {
+    border-radius: 5px;
+    background: linear-gradient(to bottom, lightcoral, red, darkred);
+    color: white;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: none;
+    padding: 9px 15px;
+    margin: 5px;
+    font-weight: bold;
+}
+
+.offBtn:hover {
+    background: linear-gradient(to bottom, red, lightcoral, darkred);
+    box-shadow: 0 6px 12px rgba(255, 255, 255, 0.7);
+    color: black;
+    border: 1px solid darkred;
+}
+
+@media (max-width: 600px) {
+    .offBtn {
+        
+        padding: 7px 10px; 
+       
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .offBtn {
+        padding: 8px 12px; 
+    }
+}
+
+.delbtn {
+    background: linear-gradient(to bottom, #e0e0e0, #c0c0c0, #a0a0a0); 
+    border: 2px solid #888; 
+    border-top-width: 2px; 
+    border-bottom-width: 4px; 
+    color: #222; 
+    font-size: 16px; 
+    padding: 7px 10px; 
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    margin: 3px 3px; 
+    width: calc(25% - 10px); 
+    border-radius: 8px;
+    font-weight: bold; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.delbtn:hover {
+    background: linear-gradient(to bottom, #d0d0d0, #b0b0b0, #909090); 
+    color: #000; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.5); 
+}
+
+@media (max-width: 600px) {
+    .delbtn {
+        font-size: 12px; 
+        padding: 4px 8px; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .delbtn {
+        font-size: 13px; 
+        padding: 6px 10px; 
+    }
+}
+
+
+.equalBtn {
+    border-radius: 5px; 
+    background: linear-gradient(to bottom, lightblue, blue, lightblue); 
+    color: white; 
+    font-weight: bold; 
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753); 
+    padding: 8px 18px; 
+    margin: 5px; 
+    border: none; 
+    width: calc(50% - 10px); 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.equalBtn:hover {
+    background: linear-gradient(to bottom, lightblue, rgba(24, 10, 224, 0.589), lightblue); 
+    box-shadow: 2px 2px 5px rgba(255, 248, 248, 0.753); 
+    color: white; 
+    border: 1px solid white; 
+    border-radius: 5px; 
+}
+
+@media (max-width: 600px) {
+    .equalBtn {
+        
+        padding: 4px 14px; 
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .equalBtn {
+       
+        padding: 7px 16px; 
+        
+    }
+}
+
+.inpsci, .ressci {
+    width: 100%; 
+    height: 40px; 
+    font-size: 24px; 
+    text-align: left; 
+    padding: 12px; 
+    box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.3); 
+    border: none; 
+    box-sizing: border-box; 
+    font-weight: bold; 
+    background-color: gainsboro; 
+    color: black; 
+}
+
+
+.inpsci {
+    color: black; 
+    border-radius: 8px 8px 0 0;
+    border-bottom: none; 
+}
+
+.ressci {
+    color: black; 
+    border-top: none; 
+    text-align: right; 
+    border-radius: 0 0 8px 8px;
+    margin-bottom: 20px
+}
+
+@media (max-width: 600px) {
+    .inpsci, .ressci {
+        padding: 7px 14px; 
+        font-size: 18px; 
+        padding: 10px; 
+        height: 30px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+@media (min-width: 601px) and (max-width: 1024px) {
+    .inpsci, .ressci {
+        padding: 8px 16px;
+        font-size: 20px; 
+        padding: 10px; 
+        height: 40px;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.3);
+    }
+}
+
+
+.inpsci:focus, .ressci:focus {
+    outline: none; 
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.4); 
+    border-color: #666;
+}
+
+.calc {
+    width: 100%;
+    max-width: 290px; 
+    background-color: black; 
+    padding: 26px 20px 18px; 
+    border-radius: 15px; 
+    box-shadow: 
+        0px 10px 20px rgba(0, 0, 0, 0.5), 
+        0px -10px 20px rgba(0, 0, 0, 0.1), 
+        10px 0px 20px rgba(0, 0, 0, 0.3), 
+        -10px 0px 20px rgba(0, 0, 0, 0.3); 
+    margin: 20px auto; 
+    color: #eee; 
+    text-align: center; 
+}
+
+@media (max-width: 600px) {
+    .calc {
+        max-width: 280px; 
+        padding: 30px 16px 16px; 
+        box-shadow: 
+            0px 8px 16px rgba(0, 0, 0, 0.4), 
+            0px -8px 16px rgba(0, 0, 0, 0.1), 
+            8px 0px 16px rgba(0, 0, 0, 0.2), 
+            -8px 0px 16px rgba(0, 0, 0, 0.2); 
+    }
+}
+
+.angle-label {
+
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.angle-input {
+
+    accent-color: rgba(22, 24, 26, 0.836);
+}
